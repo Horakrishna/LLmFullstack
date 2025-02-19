@@ -2,10 +2,9 @@ import React from "react";
 import CallToAction from "../../components/student/CallToAction";
 import Companies from "../../components/student/Companies";
 import CourseSection from "../../components/student/CourseSection";
+import Footer from "../../components/student/Footer";
 import Hero from "../../components/student/Hero";
 import TestimonialSection from "../../components/student/TestimonialSection";
-import Footer from "../../components/student/TestimonialSection";
-
 
 const Home = () => {
   return (
@@ -15,7 +14,7 @@ const Home = () => {
       <CourseSection />
       <TestimonialSection />
       <CallToAction />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
