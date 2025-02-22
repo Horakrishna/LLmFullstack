@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import { assets } from "../../assets/assets";
+import Footer from "../../components/student/Footer";
+import Rating from "../../components/student/Rating";
 import { AppContext } from "../../context/AppContext";
 
 const Player = () => {
@@ -88,7 +90,7 @@ const Player = () => {
                                     setPlayerData({
                                       ...lecture,
                                       chapter: index + 1,
-                                      lecture: i + 1,
+                                      lecture: index + 1,
                                     })
                                   }
                                   className="text-blue-500 cursor-pointer"
@@ -111,21 +113,27 @@ const Player = () => {
                 </div>
               ))}
           </div>
+          <div className="flex items-center gap-2 mt-10 py-3">
+            <h1 className="text-xl font-bold">Rate This Course:</h1>
+            <Rating initialRating={0} />
+          </div>
         </div>
         {/* Right Column */}
-        <div>
+        <div className="md:mt-10">
           {playerData ? (
             <div>
               <YouTube
                 videoId={playerData.lectureUrl.split("/").pop()}
                 iframeClassName="w-full aspect-video"
               />
-              <div>
+              <div className="flex justify-between items-center mt-1">
                 <p>
                   {playerData.chapter}.{playerData.lecture}{" "}
                   {playerData.lectureTitle}
                 </p>
-                <button>Mark as Complete</button>
+                <button className="text-blue-600">
+                  {false ? "Complete" : "Mark as Complete"}
+                </button>
               </div>
             </div>
           ) : (
@@ -133,6 +141,7 @@ const Player = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

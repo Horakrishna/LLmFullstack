@@ -1,3 +1,4 @@
+import "quill/dist/quill.snow.css";
 import React from "react";
 import { Route, Routes, useMatch } from "react-router-dom";
 import Loading from "./components/student/Loading";
@@ -28,7 +29,7 @@ const App = () => {
         <Route path="/player/:courseId" element={<Player />} />
         <Route path="/loading/:path" element={<Loading />} />
         <Route path="/educator" element={<Educator />}>
-          <Route path="educator" element={<Dashboard />} />
+          <Route path="/educator" element={<Dashboard />} />
           <Route path="add-course" element={<AddCourse />} />
           <Route path="my-course" element={<MyCourse />} />
           <Route path="student-enroll" element={<StudentsEnrolled />} />

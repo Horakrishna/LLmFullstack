@@ -351,7 +351,7 @@ export const dummyCourses = [
                 "rating": 5,
                 "_id": "6776369244daad0f313d81a9"
             }
-        ],
+        ], 
         "createdAt": "2024-12-17T08:16:53.622Z",
         "updatedAt": "2025-01-02T06:47:54.446Z",
         "__v": 3,
